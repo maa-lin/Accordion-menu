@@ -1,0 +1,106 @@
+:root {
+  --color-primary: rgb(4, 107, 52);
+  --color-secondary: rgb(239, 249, 241);
+  --color-tertiary: rgb(227, 241, 229);
+  --color-text: rgb(27, 41, 30);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Figtree", "sans-serif";
+  padding: 2rem;
+}
+
+.meny {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+}
+
+.menyval {
+  border-top: 1px solid var(--color-tertiary);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-tertiary);
+  }
+}
+
+.växla-innehåll {
+  display: none;
+}
+
+.innehåll {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  color: var(--color-text);
+  transition: max-height 0.6s ease-in;
+
+  p {
+    padding: 10px;
+  }
+
+  ul {
+    padding: 10px 10px 10px 25px;
+
+    li {
+      padding-bottom: 10px;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .bild {
+    width: 100%;
+    padding: 10px;
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      font-style: italic;
+    }
+  }
+}
+
+.titel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--color-primary);
+  transition: background-color 0.2s ease-in;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+
+  &:active {
+    background-color: var(--color-tertiary);
+    transition: none;
+  }
+}
+
+.plus-minus::before {
+  content: "+";
+}
+
+.växla-innehåll:checked + .titel .plus-minus::before {
+  content: "−";
+}
+
+.växla-innehåll:checked + .titel + .innehåll {
+  max-height: 500px;
+}
