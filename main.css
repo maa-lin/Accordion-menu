@@ -13,7 +13,7 @@
 
 body {
   font-family: "Figtree", "sans-serif";
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 
 .meny {
@@ -41,7 +41,7 @@ body {
   overflow: hidden;
   font-size: 16px;
   color: var(--color-text);
-  transition: max-height 0.6s ease-in;
+  transition: max-height 0.6s ease-in-out;
 
   p {
     padding: 10px;
